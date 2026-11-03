@@ -18,7 +18,7 @@ feature_colunms = pickle.load(open("feature_colunms",'rb'))
 st.title('Social Network ads Prediction')
 st.subheader('Purchaces Predicton')
 st.write(
-    'Enter Customer Details to predict'
+    'Enter Customer Details to predict Product'
     'where they are likely to Purchase or Not'
 )
 

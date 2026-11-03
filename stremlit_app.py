@@ -5,7 +5,7 @@ import pickle
 
 
 st.set_page_config(
-    page_title ="Purchase Prediction",
+    page_title =" Customer Purchase Prediction",
     layout = "centered"
 )
 
@@ -15,7 +15,7 @@ feature_colunms = pickle.load(open("feature_colunms",'rb'))
 
 
 # age gender from user side
-st.title('Social Network ads')
+st.title('Social Network ads Prediction')
 st.subheader('Purchaces Predicton')
 st.write(
     'Enter Customer Details to predict'
@@ -73,6 +73,7 @@ if st.button("Prediction Purchase", type  = "primary"):
     input_scaled = scaler.transform(input_data)
     # prediction
     prediction = model.predict(input_scaled)[0]
+    probability = model.predict_proba(input_scaled)[0][1]
     st.divider()
     st.subheader("Prediction Result")
 
@@ -80,3 +81,4 @@ if st.button("Prediction Purchase", type  = "primary"):
         st.success("The customer is likely to purchase the product!")
     else:
         st.info("The customer is unlikely to purchase the product.")
+    sst.write("Purchase Probability: {:.2f}%".format(probability * 100))

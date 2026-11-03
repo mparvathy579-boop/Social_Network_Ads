@@ -18,7 +18,7 @@ feature_colunms = pickle.load(open("feature_colunms",'rb'))
 st.title('Social Network ads Prediction')
 st.subheader('Purchaces Predicton')
 st.write(
-    'Enter Customer Details to predict Product'
+    'Enter Customer Details to predict'
     'where they are likely to Purchase or Not'
 )
 
@@ -81,4 +81,5 @@ if st.button("Prediction Purchase", type  = "primary"):
         st.success("The customer is likely to purchase the product!")
     else:
         st.info("The customer is unlikely to purchase the product.")
-    st.write("Purchase Probability: {:.2f}%".format(probability * 100))
+    
+    
